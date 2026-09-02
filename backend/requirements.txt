@@ -4,6 +4,10 @@ sqlalchemy
 pydantic
 pandas
 numpy
-torch
 scikit-learn
 python-multipart
+
+# CPU-only PyTorch — much smaller download (~200 MB vs 2.5 GB for CUDA version)
+# This is fine for inference (no GPU needed at serve time)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch

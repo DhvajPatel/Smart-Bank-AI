@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: smartbank-ai-backend
+    env: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    # At build time: install deps, then build the SQLite DB from the committed CSVs
+    buildCommand: pip install -r requirements.txt && python load_data.py
+    # At start time: launch FastAPI
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0

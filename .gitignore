@@ -1,7 +1,27 @@
+# Python
 __pycache__/
 *.pyc
-backend/smartbank.db
-ai/data/raw/transactions.csv
-ai/models/*.pt
+*.pyo
 .env
+
+# Node
 node_modules/
+frontend/dist/
+
+# Database — too large for Git (425 MB).
+# Render rebuilds it automatically via: python load_data.py
+backend/smartbank.db
+
+# Large CSV — 187 MB, not needed (transactions_sample.csv is committed instead)
+ai/data/raw/transactions.csv
+
+# DO NOT ignore these — needed at deploy time:
+#   ai/models/loan_ensemble.pkl   (1.65 MB — GBR model)
+#   ai/models/loan_model.pt       (0.2  MB — MLP weights)
+#   ai/models/loan_scaler.pkl     (tiny — StandardScaler)
+#   ai/models/loan_metrics.json   (tiny — metrics)
+#   ai/data/raw/customers.csv     (0.7  MB)
+#   ai/data/raw/loans.csv         (0.3  MB)
+#   ai/data/raw/accounts.csv      (0.6  MB)
+#   ai/data/raw/credit_cards.csv  (0.3  MB)
+#   ai/data/raw/product_interactions.csv (0.9 MB)
