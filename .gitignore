@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+backend/smartbank.db
+ai/data/raw/transactions.csv
+ai/models/*.pt
+.env
+node_modules/
