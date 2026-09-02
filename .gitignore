@@ -12,8 +12,8 @@ frontend/dist/
 # Render rebuilds it automatically via: python load_data.py
 backend/smartbank.db
 
-# Large CSV — 187 MB, not needed (transactions_sample.csv is committed instead)
-ai/data/raw/transactions.csv
+# transactions_sample.csv is a small sample — not needed
+ai/data/raw/transactions_sample.csv
 
 # DO NOT ignore these — needed at deploy time:
 #   ai/models/loan_ensemble.pkl   (1.65 MB — GBR model)
